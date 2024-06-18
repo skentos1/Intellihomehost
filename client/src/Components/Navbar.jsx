@@ -29,7 +29,7 @@ const Navbar = () => {
       <ul className='hidden md:flex  '>
         <Link to='/' className='p-4 hover:underline'>Domov</Link>
         <Link to='/produkty' className='p-4 hover:underline'>Produkty</Link>
-        <Link to='/stretnutie' className='p-4 hover:underline' >Stretnutie</Link>
+        <Link to='/meeting' className='p-4 hover:underline' >Stretnutie</Link>
         <Link to='/o-nas' className='p-4 hover:underline'>O nas</Link>
         <div className="flex justify-end">
             <button onClick={handleLoginClick} className='bg-white hover:bg-[#6082b6] text-black font-bold py-1 px-2 rounded text-sm'>Prihlasit sa</button>

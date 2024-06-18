@@ -3,8 +3,11 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import { UserRouter } from './routes/pouzivatel.js';
 import { OrderRouter } from './routes/order.js';
+import  MeetingRouter  from './routes/meeting.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import passport from './config/passport.js';
+import 'dotenv/config';
 
 dotenv.config();
 
@@ -20,9 +23,11 @@ app.use(cors({
     origin: ["http://localhost:5173"],
     credentials: true
 }));
+app.use(passport.initialize());
 
 app.use('/auth', UserRouter);
 app.use('/api', OrderRouter);
+app.use('/meeting', MeetingRouter);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`);
