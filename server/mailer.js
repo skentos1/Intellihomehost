@@ -179,12 +179,13 @@ const generateInvoiceHTML = (orderDetails) => {
 
 const generateInvoicePDF = async (html) => {
     const browser = await puppeteer.launch({
+        headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
-        dumpio: true
+        executablePath: await puppeteer.executablePath()
     });
     const page = await browser.newPage();
     await page.setContent(html, { waitUntil: 'networkidle0' });
-    const pdfBuffer = await page.pdf({ format: 'A4', timeout: 60000 }); // Set timeout to 60 seconds
+    const pdfBuffer = await page.pdf({ format: 'A4', timeout: 60000 });
     await browser.close();
     return pdfBuffer;
 };
