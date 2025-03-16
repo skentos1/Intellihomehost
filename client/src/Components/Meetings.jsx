@@ -25,7 +25,7 @@ const Meetings = () => {
   useEffect(() => {
     const fetchBookedSlots = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/meeting/booked-slots', {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND}/meeting/booked-slots`, {
           params: {
             date: startDate.toISOString().split('T')[0],
             city,
@@ -54,7 +54,7 @@ const Meetings = () => {
     };
 
     try {
-      await axios.post('http://localhost:3000/meeting/book-meeting', meetingData);
+      await axios.post(`${import.meta.env.VITE_BACKEND}/meeting/book-meeting`, meetingData);
       alert('Meeting booked successfully!');
     } catch (error) {
       console.error('Error booking meeting:', error);

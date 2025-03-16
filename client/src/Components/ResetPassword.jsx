@@ -10,7 +10,8 @@ const ResetPassword = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`http://localhost:3000/auth/reset-password/${token}`, { password })
+    axios.post(`${import.meta.env.VITE_BACKEND}/auth/reset-password/${token}`, { password })
+
       .then(response => {
         if (response.data.status) {
           alert("Heslo bolo zmenené");

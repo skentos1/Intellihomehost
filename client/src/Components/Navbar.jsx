@@ -30,7 +30,7 @@ const Navbar = () => {
         <Link to='/' className='p-4 hover:underline'>Domov</Link>
         <Link to='/produkty' className='p-4 hover:underline'>Produkty</Link>
         <Link to='/meeting' className='p-4 hover:underline' >Stretnutie</Link>
-        <Link to='/o-nas' className='p-4 hover:underline'>O nas</Link>
+        
         <div className="flex justify-end">
             <button onClick={handleLoginClick} className='bg-white hover:bg-[#6082b6] text-black font-bold py-1 px-2 rounded text-sm'>Prihlasit sa</button>
         </div>
@@ -45,8 +45,7 @@ const Navbar = () => {
                 <li className='uppercase border-b border-gray-600' ><Link to='/' className='block p-4' onClick={handleLinkClick}>Domov</Link></li>
                 <li className='uppercase border-b border-gray-600'><Link to='/produkty' className='block p-4' onClick={handleLinkClick}>Produkty</Link></li>
                 <li className='uppercase border-b border-gray-600'><Link to='/stretnutie' className='block p-4' onClick={handleLinkClick}>Stretnutie</Link></li>
-                <li className='uppercase border-b border-gray-600'><Link to='/o-nas' className='block p-4' onClick={handleLinkClick}>O nas</Link></li>
-
+               
                 <div className="flex justify mt-4">
                     <button onClick={handleLoginClick} className='bg-white hover:bg-[#6082b6] text-black font-bold py-2 px-4 rounded'>Prihlasit sa</button>
                 </div>

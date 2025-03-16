@@ -10,7 +10,7 @@ const ForgotPassword = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:3000/auth/forgot-password", { email })
+    axios.post(`${import.meta.env.VITE_BACKEND}/auth/forgot-password`, { email })
       .then(response => {
         if (response.data.status) {
           alert("Skontrolujte si email, link na resetovanie hesla bol odoslaný!");

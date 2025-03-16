@@ -12,7 +12,8 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    Axios.post("http://localhost:3000/auth/login", { email, password })
+    Axios.post(`${import.meta.env.VITE_BACKEND}/auth/login`, { email, password })
+
       .then(response => {
         if (response.data.status) {
           navigate('/');

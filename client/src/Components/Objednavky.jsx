@@ -125,7 +125,7 @@ const Objednavky = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/api/orders', orderData);
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND}/api/orders`, orderData);
       const { order } = response.data;
       console.log('Order submitted successfully:', response.data);
       setOrderDetails(order);  // Set the order details in state
