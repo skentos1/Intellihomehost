@@ -4,6 +4,9 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import puppeteer from 'puppeteer';
 import fs from 'fs';
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -11,11 +14,10 @@ const __dirname = dirname(__filename);
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'kentos.simon@gmail.com',
-        pass: 'oqhe kvjg rjmo uvgr' // Make sure to keep this secure and use environment variables in a production environment
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     },
 });
-
 const generateInvoiceHTML = (orderDetails) => {
     const orderDate = new Date();
     const paymentDueDate = new Date(orderDate);

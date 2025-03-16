@@ -1,6 +1,8 @@
 import express from 'express';
 import Meeting from '../models/Meeting.js';
 import nodemailer from 'nodemailer';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const router = express.Router();
 
@@ -30,21 +32,20 @@ router.post('/book-meeting', async (req, res) => {
   
       console.log('Meeting saved successfully:', newMeeting);
 
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: 'kentos.simon@gmail.com',
-        pass: 'oqhe kvjg rjmo uvgr'
-      },
-    });
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS
+        },
+      });
 
     const mailOptions = {
-      from: 'kentos.simon@gmail.com',
+      from: process.env.EMAIL_USER,
       to: email,
       subject: 'Potvrdenie schôdzky',
       text: `Hello ${firstName},\n\nYour meeting is booked for ${date} at ${timeSlot} in ${city}.\n\nThank you!`,
     };
-
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         console.log(error);
