@@ -44,7 +44,7 @@ const Navbar = () => {
                 <h1 className=' w-full m-4 text-3xl font-bold text-[#6082b6]'><Link to='/'>IntelliHome</Link></h1>
                 <li className='uppercase border-b border-gray-600' ><Link to='/' className='block p-4' onClick={handleLinkClick}>Domov</Link></li>
                 <li className='uppercase border-b border-gray-600'><Link to='/produkty' className='block p-4' onClick={handleLinkClick}>Produkty</Link></li>
-                <li className='uppercase border-b border-gray-600'><Link to='/stretnutie' className='block p-4' onClick={handleLinkClick}>Stretnutie</Link></li>
+                <li className='uppercase border-b border-gray-600'><Link to='/meeting' className='block p-4' onClick={handleLinkClick}>Stretnutie</Link></li>
                
                 <div className="flex justify mt-4">
                     <button onClick={handleLoginClick} className='bg-white hover:bg-[#6082b6] text-black font-bold py-2 px-4 rounded'>Prihlasit sa</button>
