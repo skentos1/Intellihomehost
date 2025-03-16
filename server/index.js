@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGO_URI, {
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: ["http://localhost:5173"],
+    origin: ["https://intellihomehost.onrender.com"],
     credentials: true
 }));
 app.use(passport.initialize());
